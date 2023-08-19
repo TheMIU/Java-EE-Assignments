@@ -109,7 +109,6 @@ public class CustomerServlet extends HttpServlet {
             throw new RuntimeException(e);
 
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
             JsonObjectBuilder response = Json.createObjectBuilder();
             response.add("state", "Error");
             response.add("message", e.getMessage());
