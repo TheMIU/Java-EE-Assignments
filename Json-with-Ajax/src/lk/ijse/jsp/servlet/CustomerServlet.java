@@ -22,23 +22,6 @@ public class CustomerServlet extends HttpServlet {
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/testdb", "root", "1234");
             PreparedStatement pstm = connection.prepareStatement("select * from Customer");
             ResultSet rst = pstm.executeQuery();
-//            resp.addHeader("Content-Type", "application/json");
-
-//            String json="[";
-//            while (rst.next()) {
-//                String customer="{";
-//                String id = rst.getString(1);
-//                String name = rst.getString(2);
-//                String address = rst.getString(3);
-//                customer+="\"id\":\""+id+"\",";
-//                customer+="\"name\":\""+name+"\",";
-//                customer+="\"address\":\""+address+"\"";
-//                customer+="},";
-//                json+=customer;
-//            }
-//            json=json+"]";
-//
-//            resp.getWriter().print(json.substring(0,json.length()-2)+"]");
 
             JsonArrayBuilder allCustomers = Json.createArrayBuilder();
             while (rst.next()) {
@@ -47,9 +30,9 @@ public class CustomerServlet extends HttpServlet {
                 String address = rst.getString(3);
 
                 JsonObjectBuilder customerObject = Json.createObjectBuilder();
-                customerObject.add("id",id);
-                customerObject.add("name",name);
-                customerObject.add("address",address);
+                customerObject.add("id", id);
+                customerObject.add("name", name);
+                customerObject.add("address", address);
                 allCustomers.add(customerObject.build());
             }
 
@@ -60,7 +43,6 @@ public class CustomerServlet extends HttpServlet {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
     }
 
     @Override
@@ -68,7 +50,6 @@ public class CustomerServlet extends HttpServlet {
         String cusID = req.getParameter("cusID");
         String cusName = req.getParameter("cusName");
         String cusAddress = req.getParameter("cusAddress");
-        String cusSalary = req.getParameter("cusSalary");
         String option = req.getParameter("option");
 
         try {
@@ -81,31 +62,44 @@ public class CustomerServlet extends HttpServlet {
                     pstm.setObject(1, cusID);
                     pstm.setObject(2, cusName);
                     pstm.setObject(3, cusAddress);
-                    resp.addHeader("Content-Type","application/json");
+                    resp.addHeader("Content-Type", "application/json");
 
                     if (pstm.executeUpdate() > 0) {
                         JsonObjectBuilder response = Json.createObjectBuilder();
-                        response.add("state","Ok");
-                        response.add("message","Successfully Added.!");
-                        response.add("data","");
+                        response.add("state", "Ok");
+                        response.add("message", "Successfully Added.!");
+                        response.add("data", "");
                         resp.getWriter().print(response.build());
                     }
                     break;
+
                 case "delete":
                     PreparedStatement pstm2 = connection.prepareStatement("delete from Customer where cusID=?");
                     pstm2.setObject(1, cusID);
-                    if (pstm2.executeUpdate() > 0) {
-                        resp.getWriter().println("Customer Deleted..!");
-                    }
+                    resp.addHeader("Content-Type", "application/json");
 
+                    if (pstm2.executeUpdate() > 0) {
+                        JsonObjectBuilder response = Json.createObjectBuilder();
+                        response.add("state", "Ok");
+                        response.add("message", "Customer Deleted..!");
+                        response.add("data", "");
+                        resp.getWriter().print(response.build());
+                    }
                     break;
+
                 case "update":
                     PreparedStatement pstm3 = connection.prepareStatement("update Customer set cusName=?,cusAddress=? where cusID=?");
                     pstm3.setObject(3, cusID);
                     pstm3.setObject(1, cusName);
                     pstm3.setObject(2, cusAddress);
+                    resp.addHeader("Content-Type", "application/json");
+
                     if (pstm3.executeUpdate() > 0) {
-                        resp.getWriter().println("Customer Updated..!");
+                        JsonObjectBuilder response = Json.createObjectBuilder();
+                        response.add("state", "Ok");
+                        response.add("message", "Customer Updated..!");
+                        response.add("data", "");
+                        resp.getWriter().print(response.build());
                     }
                     break;
             }
@@ -115,10 +109,11 @@ public class CustomerServlet extends HttpServlet {
             throw new RuntimeException(e);
 
         } catch (SQLException e) {
+            System.out.println(e.getMessage());
             JsonObjectBuilder response = Json.createObjectBuilder();
-            response.add("state","Error");
-            response.add("message",e.getMessage());
-            response.add("data","");
+            response.add("state", "Error");
+            response.add("message", e.getMessage());
+            response.add("data", "");
             resp.setStatus(400);
             resp.getWriter().print(response.build());
         }

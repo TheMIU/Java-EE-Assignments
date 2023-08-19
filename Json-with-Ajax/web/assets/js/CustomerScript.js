@@ -22,6 +22,7 @@ function getAllCustomers(){
         },
         error:function(error){
             console.log(error);
+            alert(error.responseJSON.message);
         }
     });
 }
@@ -51,8 +52,14 @@ $("#btnCusDelete").click(function(){
         url:'customer?option=delete',
         method:'post',
         data:formData,
-        success:function (resp){
+        success:function (res){
+            console.log(res);
+            alert(res.message);
             getAllCustomers();
+        },
+        error:function (error){
+            console.log(error.responseJSON);
+            alert(error.responseJSON.message);
         }
     });
 });
@@ -63,8 +70,14 @@ $("#btnUpdate").click(function (){
         url:'customer?option=update',
         method:'post',
         data:formData,
-        success:function (resp){
+        success:function (res){
+            console.log(res);
+            alert(res.message);
             getAllCustomers();
+        },
+        error:function (error){
+            console.log(error.responseJSON);
+            alert(error.responseJSON.message);
         }
     });
 });
