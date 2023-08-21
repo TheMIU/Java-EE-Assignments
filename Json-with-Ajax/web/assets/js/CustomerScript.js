@@ -10,8 +10,11 @@ function getAllCustomers(){
     $.ajax({
         url: 'customer',
         dataType:"json",
+        method:"get",
         success: function (customers) {
             for (let i in customers) {
+                console.log(customers[i]);
+
                 let cus = customers[i];
                 let id = cus.id;
                 let name = cus.name;
@@ -21,7 +24,7 @@ function getAllCustomers(){
             }
         },
         error:function(error){
-            console.log(error);
+            console.log(error+" error");
             alert(error.responseJSON.message);
         }
     });
@@ -30,7 +33,7 @@ function getAllCustomers(){
 $("#btnCustomer").click(function (){
     let formData=$("#customerForm").serialize();
     $.ajax({
-        url:"customer?option=add",
+        url:"customer",
         method:"post",
         data:formData,
         success:function (res){
@@ -47,11 +50,13 @@ $("#btnCustomer").click(function (){
 });
 
 $("#btnCusDelete").click(function(){
-    let formData=$("#customerForm").serialize();
+ //   let formData=$("#customerForm").serialize();
+    let id = $('#txtCustomerID').val();
+
     $.ajax({
-        url:'customer?option=delete',
-        method:'post',
-        data:formData,
+        url:'customer?id='+id,
+        method:'delete',
+
         success:function (res){
             console.log(res);
             alert(res.message);
@@ -65,11 +70,25 @@ $("#btnCusDelete").click(function(){
 });
 
 $("#btnUpdate").click(function (){
-    let formData=$("#customerForm").serialize();
+  //  let formData=$("#customerForm").serialize();
+
+    let id = $('#txtCustomerID').val();
+    let name = $('#txtCustomerName').val();
+    let address = $('#txtCustomerAddress').val();
+
+
+    let customer={
+        "cusID" : id ,
+        "cusName" : name,
+        "cusAddress" :address
+    }
+
     $.ajax({
-        url:'customer?option=update',
-        method:'post',
-        data:formData,
+        url:'customer',
+        method:'put',
+        contentType: "application/json",
+        data:JSON.stringify(customer),
+
         success:function (res){
             console.log(res);
             alert(res.message);

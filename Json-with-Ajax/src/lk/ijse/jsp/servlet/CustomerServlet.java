@@ -1,8 +1,6 @@
 package lk.ijse.jsp.servlet;
 
-import javax.json.Json;
-import javax.json.JsonArrayBuilder;
-import javax.json.JsonObjectBuilder;
+import javax.json.*;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -50,58 +48,101 @@ public class CustomerServlet extends HttpServlet {
         String cusID = req.getParameter("cusID");
         String cusName = req.getParameter("cusName");
         String cusAddress = req.getParameter("cusAddress");
-        String option = req.getParameter("option");
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/testdb", "root", "1234");
 
-            switch (option) {
-                case "add":
-                    PreparedStatement pstm = connection.prepareStatement("insert into Customer values(?,?,?)");
-                    pstm.setObject(1, cusID);
-                    pstm.setObject(2, cusName);
-                    pstm.setObject(3, cusAddress);
-                    resp.addHeader("Content-Type", "application/json");
+            PreparedStatement pstm = connection.prepareStatement("insert into Customer values(?,?,?)");
+            pstm.setObject(1, cusID);
+            pstm.setObject(2, cusName);
+            pstm.setObject(3, cusAddress);
+            resp.addHeader("Content-Type", "application/json");
 
-                    if (pstm.executeUpdate() > 0) {
-                        JsonObjectBuilder response = Json.createObjectBuilder();
-                        response.add("state", "Ok");
-                        response.add("message", "Successfully Added.!");
-                        response.add("data", "");
-                        resp.getWriter().print(response.build());
-                    }
-                    break;
+            if (pstm.executeUpdate() > 0) {
+                JsonObjectBuilder response = Json.createObjectBuilder();
+                response.add("state", "Ok");
+                response.add("message", "Successfully Added.!");
+                response.add("data", "");
+                resp.getWriter().print(response.build());
+            }
 
-                case "delete":
-                    PreparedStatement pstm2 = connection.prepareStatement("delete from Customer where cusID=?");
-                    pstm2.setObject(1, cusID);
-                    resp.addHeader("Content-Type", "application/json");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
 
-                    if (pstm2.executeUpdate() > 0) {
-                        JsonObjectBuilder response = Json.createObjectBuilder();
-                        response.add("state", "Ok");
-                        response.add("message", "Customer Deleted..!");
-                        response.add("data", "");
-                        resp.getWriter().print(response.build());
-                    }
-                    break;
+        } catch (SQLException e) {
+            JsonObjectBuilder response = Json.createObjectBuilder();
+            response.add("state", "Error");
+            response.add("message", e.getMessage());
+            response.add("data", "");
+            resp.setStatus(400);
+            resp.getWriter().print(response.build());
+        }
+    }
 
-                case "update":
-                    PreparedStatement pstm3 = connection.prepareStatement("update Customer set cusName=?,cusAddress=? where cusID=?");
-                    pstm3.setObject(3, cusID);
-                    pstm3.setObject(1, cusName);
-                    pstm3.setObject(2, cusAddress);
-                    resp.addHeader("Content-Type", "application/json");
+    @Override
+    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        JsonReader reader = Json.createReader(req.getReader());
+        JsonObject jsonObject = reader.readObject();
 
-                    if (pstm3.executeUpdate() > 0) {
-                        JsonObjectBuilder response = Json.createObjectBuilder();
-                        response.add("state", "Ok");
-                        response.add("message", "Customer Updated..!");
-                        response.add("data", "");
-                        resp.getWriter().print(response.build());
-                    }
-                    break;
+        String cusID = jsonObject.getString("cusID");
+        String cusName = jsonObject.getString("cusName");
+        String cusAddress = jsonObject.getString("cusAddress");
+
+        System.out.println(cusID+" "+cusName+" "+cusAddress);
+
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/testdb", "root", "1234");
+
+            PreparedStatement pstm3 = connection.prepareStatement("update Customer set cusName=?,cusAddress=? where cusID=?");
+            pstm3.setObject(3, cusID);
+            pstm3.setObject(1, cusName);
+            pstm3.setObject(2, cusAddress);
+            resp.addHeader("Content-Type", "application/json");
+
+            if (pstm3.executeUpdate() > 0) {
+                JsonObjectBuilder response = Json.createObjectBuilder();
+                response.add("state", "Ok");
+                response.add("message", "Customer Updated..!");
+                response.add("data", "");
+                resp.getWriter().print(response.build());
+            }
+
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+
+        } catch (SQLException e) {
+            JsonObjectBuilder response = Json.createObjectBuilder();
+            response.add("state", "Error");
+            response.add("message", e.getMessage());
+            response.add("data", "");
+            resp.setStatus(400);
+            resp.getWriter().print(response.build());
+        }
+    }
+
+    @Override
+    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        JsonReader reader = Json.createReader(req.getReader());
+        JsonObject jsonObject = reader.readObject();
+
+        String cusID = jsonObject.getString("cusID");
+
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/testdb", "root", "1234");
+
+            PreparedStatement pstm2 = connection.prepareStatement("delete from Customer where cusID=?");
+            pstm2.setObject(1, cusID);
+            resp.addHeader("Content-Type", "application/json");
+
+            if (pstm2.executeUpdate() > 0) {
+                JsonObjectBuilder response = Json.createObjectBuilder();
+                response.add("state", "Ok");
+                response.add("message", "Customer Deleted..!");
+                response.add("data", "");
+                resp.getWriter().print(response.build());
             }
 
 

@@ -7,16 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa118b7d-53de-46d5-873f-3e15e6e55df6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Json-with-Ajax/web/assets/js/ItemScript.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Json-with-Ajax/src/lk/ijse/jsp/servlet/CustomerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/Json-with-Ajax/src/lk/ijse/jsp/servlet/CustomerServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Json-with-Ajax/src/lk/ijse/jsp/servlet/ItemServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/Json-with-Ajax/src/lk/ijse/jsp/servlet/ItemServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Json-with-Ajax/web/pages/customer.html" beforeDir="false" afterPath="$PROJECT_DIR$/Json-with-Ajax/web/pages/customer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Json-with-Ajax/web/pages/item.html" beforeDir="false" afterPath="$PROJECT_DIR$/Json-with-Ajax/web/pages/item.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Json-with-Ajax/web/assets/js/CustomerScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/Json-with-Ajax/web/assets/js/CustomerScript.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/pos_app/pos_app.war" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/pos_app/pos_app.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Java-EE-Assignments/lk/ijse/jsp/servlet/CustomerServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-EE-Assignments/lk/ijse/jsp/servlet/CustomerServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-EE-Assignments/lk/ijse/jsp/servlet/ItemServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-EE-Assignments/lk/ijse/jsp/servlet/ItemServlet.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +153,11 @@
       <option name="presentableId" value="Default" />
       <updated>1692419629856</updated>
       <workItem from="1692419632380" duration="4296000" />
-      <workItem from="1692435805670" duration="1736000" />
+      <workItem from="1692435805670" duration="2010000" />
+      <workItem from="1692439173891" duration="4000" />
+      <workItem from="1692451364003" duration="88000" />
+      <workItem from="1692588911090" duration="5718000" />
+      <workItem from="1692604784599" duration="2614000" />
     </task>
     <servers />
   </component>
