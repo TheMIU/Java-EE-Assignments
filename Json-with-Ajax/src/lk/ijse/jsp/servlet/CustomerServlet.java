@@ -20,6 +20,7 @@ public class CustomerServlet extends HttpServlet {
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/testdb", "root", "1234");
             PreparedStatement pstm = connection.prepareStatement("select * from Customer");
             ResultSet rst = pstm.executeQuery();
+            resp.addHeader("Access-Control-Allow-Origin", "*");
 
             JsonArrayBuilder allCustomers = Json.createArrayBuilder();
             while (rst.next()) {
@@ -48,6 +49,7 @@ public class CustomerServlet extends HttpServlet {
         String cusID = req.getParameter("cusID");
         String cusName = req.getParameter("cusName");
         String cusAddress = req.getParameter("cusAddress");
+        resp.addHeader("Access-Control-Allow-Origin", "*");
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -89,7 +91,10 @@ public class CustomerServlet extends HttpServlet {
         String cusName = jsonObject.getString("cusName");
         String cusAddress = jsonObject.getString("cusAddress");
 
-        System.out.println(cusID+" "+cusName+" "+cusAddress);
+        System.out.println(cusID + " " + cusName + " " + cusAddress);
+
+        resp.addHeader("Access-Control-Allow-Origin", "*");
+
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -129,6 +134,8 @@ public class CustomerServlet extends HttpServlet {
 
         String cusID = jsonObject.getString("cusID");
 
+        resp.addHeader("Access-Control-Allow-Origin", "*");
+
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/testdb", "root", "1234");
@@ -157,5 +164,13 @@ public class CustomerServlet extends HttpServlet {
             resp.setStatus(400);
             resp.getWriter().print(response.build());
         }
+    }
+
+    @Override
+    protected void doOptions(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.addHeader("Access-Control-Allow-Origin", "*");
+        resp.addHeader("Access-Control-Allow-Methods", "PUT");
+        resp.addHeader("Access-Control-Allow-Methods", "DELETE");
+        resp.addHeader("Access-Control-Allow-Headers", "Content-type");
     }
 }
