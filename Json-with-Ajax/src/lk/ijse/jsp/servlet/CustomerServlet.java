@@ -71,7 +71,6 @@ public class CustomerServlet extends HttpServlet {
 
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
-
         } catch (SQLException e) {
             JsonObjectBuilder response = Json.createObjectBuilder();
             response.add("state", "Error");
@@ -91,10 +90,7 @@ public class CustomerServlet extends HttpServlet {
         String cusName = jsonObject.getString("cusName");
         String cusAddress = jsonObject.getString("cusAddress");
 
-        System.out.println(cusID + " " + cusName + " " + cusAddress);
-
         resp.addHeader("Access-Control-Allow-Origin", "*");
-
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -116,7 +112,6 @@ public class CustomerServlet extends HttpServlet {
 
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
-
         } catch (SQLException e) {
             JsonObjectBuilder response = Json.createObjectBuilder();
             response.add("state", "Error");

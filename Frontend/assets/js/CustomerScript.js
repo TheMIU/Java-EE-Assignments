@@ -4,44 +4,42 @@ $("#btnGetAll").click(function () {
     getAllCustomers();
 });
 
-function getAllCustomers(){
+function getAllCustomers() {
     $("#tblCustomer").empty();
-    <!--send ajax request to the customer servlet using jQuery-->
+
     $.ajax({
         url: 'http://localhost:8080/Json_with_Ajax_Web_exploded/pages/customer',
-        dataType:"json",
-        method:"get",
+        dataType: "json",
+        method: "GET",
         success: function (customers) {
             for (let i in customers) {
-                console.log(customers[i]);
-
                 let cus = customers[i];
                 let id = cus.id;
                 let name = cus.name;
                 let address = cus.address;
-                let row=`<tr><td>${id}</td><td>${name}</td><td>${address}</td></tr>`;
+                let row = `<tr><td>${id}</td><td>${name}</td><td>${address}</td></tr>`;
                 $("#tblCustomer").append(row);
             }
         },
-        error:function(error){
-            console.log(error+" error");
+        error: function (error) {
+            console.log(error + " error");
             alert(error.responseJSON.message);
         }
     });
 }
 
-$("#btnCustomer").click(function (){
-    let formData=$("#customerForm").serialize();
+$("#btnCustomer").click(function () {
+    let formData = $("#customerForm").serialize();
     $.ajax({
-        url:"http://localhost:8080/Json_with_Ajax_Web_exploded/pages/customer",
-        method:"post",
-        data:formData,
-        success:function (res){
+        url: "http://localhost:8080/Json_with_Ajax_Web_exploded/pages/customer",
+        method: "POST",
+        data: formData,
+        success: function (res) {
             console.log(res);
             alert(res.message);
             getAllCustomers();
         },
-        error:function (error){
+        error: function (error) {
             console.log(error.responseJSON);
             alert(error.responseJSON.message);
         }
@@ -49,51 +47,51 @@ $("#btnCustomer").click(function (){
 
 });
 
-$("#btnCusDelete").click(function(){
- //   let formData=$("#customerForm").serialize();
+$("#btnCusDelete").click(function () {
+    //   let formData=$("#customerForm").serialize();
     let id = $('#txtCustomerID').val();
 
     $.ajax({
-        url:'http://localhost:8080/Json_with_Ajax_Web_exploded/pages/customer?id='+id,
-        method:'delete',
+        url: 'http://localhost:8080/Json_with_Ajax_Web_exploded/pages/customer?id=' + id,
+        method: 'DELETE',
 
-        success:function (res){
+        success: function (res) {
             console.log(res);
             alert(res.message);
             getAllCustomers();
         },
-        error:function (error){
+        error: function (error) {
             console.log(error.responseJSON);
             alert(error.responseJSON.message);
         }
     });
 });
 
-$("#btnUpdate").click(function (){
-  //  let formData=$("#customerForm").serialize();
+$("#btnUpdate").click(function () {
+    //  let formData=$("#customerForm").serialize();
 
     let id = $('#txtCustomerID').val();
     let name = $('#txtCustomerName').val();
     let address = $('#txtCustomerAddress').val();
 
-    let customer={
-        "cusID" : id ,
-        "cusName" : name,
-        "cusAddress" :address
+    let customer = {
+        "cusID": id,
+        "cusName": name,
+        "cusAddress": address
     }
 
     $.ajax({
-        url:'http://localhost:8080/Json_with_Ajax_Web_exploded/pages/customer',
-        method:'put',
+        url: 'http://localhost:8080/Json_with_Ajax_Web_exploded/pages/customer',
+        method: 'put',
         contentType: "application/json",
-        data:JSON.stringify(customer),
+        data: JSON.stringify(customer),
 
-        success:function (res){
+        success: function (res) {
             console.log(res);
             alert(res.message);
             getAllCustomers();
         },
-        error:function (error){
+        error: function (error) {
             console.log(error.responseJSON);
             alert(error.responseJSON.message);
         }
