@@ -1,5 +1,7 @@
 package lk.ijse.jsp.servlet;
 
+import lk.ijse.jsp.servlet.util.DBConnection;
+
 import javax.json.*;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,8 +18,7 @@ public class CustomerServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/testdb", "root", "1234");
+            Connection connection = DBConnection.getDBConnection().getConnection();
             PreparedStatement pstm = connection.prepareStatement("select * from customer");
             ResultSet rst = pstm.executeQuery();
 
@@ -54,10 +55,9 @@ public class CustomerServlet extends HttpServlet {
 
         resp.addHeader("Content-Type", "application/json");
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/testdb", "root", "1234");
-
+            Connection connection = DBConnection.getDBConnection().getConnection();
             PreparedStatement pstm = connection.prepareStatement("insert into customer values(?,?,?)");
+
             pstm.setObject(1, cusID);
             pstm.setObject(2, cusName);
             pstm.setObject(3, cusAddress);
@@ -65,7 +65,7 @@ public class CustomerServlet extends HttpServlet {
             if (pstm.executeUpdate() > 0) {
                 showMessage(resp, cusID + " Successfully Added..!", "ok", "[]");
                 resp.setStatus(200);
-            }else {
+            } else {
                 showMessage(resp, "Wrong data", "error", "[]");
                 resp.setStatus(400);
             }
@@ -92,10 +92,9 @@ public class CustomerServlet extends HttpServlet {
         resp.addHeader("Content-Type", "application/json");
 
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/testdb", "root", "1234");
-
+            Connection connection = DBConnection.getDBConnection().getConnection();
             PreparedStatement pstm3 = connection.prepareStatement("update customer set cusName=?,cusAddress=? where cusID=?");
+
             pstm3.setObject(3, cusID);
             pstm3.setObject(1, cusName);
             pstm3.setObject(2, cusAddress);
@@ -103,7 +102,7 @@ public class CustomerServlet extends HttpServlet {
             if (pstm3.executeUpdate() > 0) {
                 showMessage(resp, cusID + " Customer Updated..!", "ok", "[]");
                 resp.setStatus(200);
-            }else {
+            } else {
                 showMessage(resp, cusID + " Customer is not exist..!", "error", "[]");
                 resp.setStatus(400);
             }
@@ -124,9 +123,7 @@ public class CustomerServlet extends HttpServlet {
         resp.addHeader("Content-type", "application/json");
 
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/testdb", "root", "1234");
-
+            Connection connection = DBConnection.getDBConnection().getConnection();
             PreparedStatement pstm = connection.prepareStatement("delete from customer where cusID=?");
             pstm.setObject(1, cusID);
 

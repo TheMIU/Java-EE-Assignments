@@ -7,10 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a5a995b7-dbf3-4701-8781-dbe4702aa7e1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Json-with-Ajax/src/lk/ijse/jsp/servlet/util/DBConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Json-with-Ajax/src/lk/ijse/jsp/servlet/CustomerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/Json-with-Ajax/src/lk/ijse/jsp/servlet/CustomerServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Json-with-Ajax/web/assets/js/CustomerScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/Json-with-Ajax/web/assets/js/CustomerScript.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Json-with-Ajax/web/pages/customer.html" beforeDir="false" afterPath="$PROJECT_DIR$/Json-with-Ajax/web/pages/customer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/PosAppNew/PosAppNew.war" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/PosAppNew/PosAppNew.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Json-with-Ajax/lk/ijse/jsp/servlet/CustomerServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Json-with-Ajax/lk/ijse/jsp/servlet/CustomerServlet.class" afterDir="false" />
     </list>
@@ -18,6 +17,13 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -249,7 +255,7 @@
       <workItem from="1692867398806" duration="1981000" />
       <workItem from="1692869545154" duration="574000" />
       <workItem from="1692870175332" duration="488000" />
-      <workItem from="1692870895882" duration="8758000" />
+      <workItem from="1692870895882" duration="9407000" />
     </task>
     <servers />
   </component>
