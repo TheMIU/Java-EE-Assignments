@@ -2,18 +2,64 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="Json-with-Ajax:Web exploded" />
+      <artifact name="PosAppNew" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a5a995b7-dbf3-4701-8781-dbe4702aa7e1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java-EE-Assignments.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Json_with_Ajax_Web_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/json_p.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/json_p.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_j_8_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_j_8_1_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/assets/js/CustomerScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/assets/js/CustomerScript.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/assets/js/ItemScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/assets/js/ItemScript.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/Frontend.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/assets/css/bootstrap-grid.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/assets/css/bootstrap-grid.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/assets/css/bootstrap-grid.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/assets/css/bootstrap-grid.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/assets/css/bootstrap-reboot.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/assets/css/bootstrap-reboot.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/assets/css/bootstrap-reboot.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/assets/css/bootstrap-reboot.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/assets/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/assets/css/bootstrap.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/assets/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/assets/css/bootstrap.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/assets/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/assets/css/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/assets/js/CustomerScript.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/assets/js/ItemScript.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/assets/js/bootstrap.bundle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/assets/js/bootstrap.bundle.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/assets/js/bootstrap.bundle.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/assets/js/bootstrap.bundle.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/assets/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/assets/js/bootstrap.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/assets/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/assets/js/bootstrap.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/assets/js/jquery-3.6.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/assets/js/jquery-3.7.0.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/pages/customer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/pages/item.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/pages/purchase-order.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Json-with-Ajax/Json-with-Ajax.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Json-with-Ajax/Json-with-Ajax.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Json-with-Ajax/src/lk/ijse/jsp/dto/CustomerDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Json-with-Ajax/src/lk/ijse/jsp/dto/CustomerDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Json-with-Ajax/src/lk/ijse/jsp/dto/ItemDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Json-with-Ajax/src/lk/ijse/jsp/dto/ItemDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Json-with-Ajax/src/lk/ijse/jsp/servlet/CustomerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/Json-with-Ajax/src/lk/ijse/jsp/servlet/CustomerServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Json-with-Ajax/src/lk/ijse/jsp/servlet/ItemServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/Json-with-Ajax/src/lk/ijse/jsp/servlet/ItemServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Json_with_Ajax_Web_exploded/Json-with-Ajax_Web exploded.war" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Json_with_Ajax_Web_exploded/Json-with-Ajax_Web exploded.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Json_with_Ajax_Web_exploded/Json-with-Ajax_Web exploded.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Json_with_Ajax_Web_exploded2/WEB-INF/lib/javax.json-1.1.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Json_with_Ajax_Web_exploded2/WEB-INF/lib/javax.json-api-1.1.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Json_with_Ajax_Web_exploded2/WEB-INF/lib/mysql-connector-j-8.1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Json-with-Ajax/lk/ijse/jsp/servlet/CustomerServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Json-with-Ajax/lk/ijse/jsp/servlet/CustomerServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Json-with-Ajax/lk/ijse/jsp/servlet/ItemServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Json-with-Ajax/lk/ijse/jsp/servlet/ItemServlet.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,27 +86,47 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Frontend" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Json-with-Ajax" />
+    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.proportion" value="0.15136719" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\GitHub MY\Java-EE-Assignments\Json-with-Ajax\web" />
+    </key>
+  </component>
   <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Java-EE-Assignments" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Java-EE-Assignments" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tomcat 8.5.90" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.90" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/Json_with_Ajax_Web_exploded/" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/PosApp/" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="Json-with-Ajax:Web exploded">
+        <artifact name="PosAppNew">
           <settings>
-            <option name="CONTEXT_PATH" value="/Json_with_Ajax_Web_exploded" />
+            <option name="CONTEXT_PATH" value="/PosApp" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="7515689d-9914-4027-b5a3-b3e6104f917e" />
+        <option name="BASE_DIRECTORY_NAME" value="784e8dbf-75f1-413c-b2f3-754810075d11" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -68,7 +134,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="59610" />
+        <option name="DEBUG_PORT" value="59525" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -133,8 +199,85 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="Json-with-Ajax:Web exploded" />
+          <artifact name="PosAppNew" />
         </option>
+      </method>
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="621e5217-3958-4ad2-a0c5-cb60541be6ea" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="59525" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -147,7 +290,13 @@
       <option name="presentableId" value="Default" />
       <updated>1692609200249</updated>
       <workItem from="1692609202258" duration="6103000" />
-      <workItem from="1692625506649" duration="8419000" />
+      <workItem from="1692625506649" duration="8529000" />
+      <workItem from="1692841750453" duration="1235000" />
+      <workItem from="1692866178896" duration="842000" />
+      <workItem from="1692867398806" duration="1981000" />
+      <workItem from="1692869545154" duration="574000" />
+      <workItem from="1692870175332" duration="488000" />
+      <workItem from="1692870895882" duration="3680000" />
     </task>
     <servers />
   </component>

@@ -18,9 +18,8 @@ public class CustomerServlet extends HttpServlet {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/testdb", "root", "1234");
-            PreparedStatement pstm = connection.prepareStatement("select * from Customer");
+            PreparedStatement pstm = connection.prepareStatement("select * from customer");
             ResultSet rst = pstm.executeQuery();
-            resp.addHeader("Access-Control-Allow-Origin", "*");
 
             JsonArrayBuilder allCustomers = Json.createArrayBuilder();
             while (rst.next()) {
@@ -49,17 +48,16 @@ public class CustomerServlet extends HttpServlet {
         String cusID = req.getParameter("cusID");
         String cusName = req.getParameter("cusName");
         String cusAddress = req.getParameter("cusAddress");
-        resp.addHeader("Access-Control-Allow-Origin", "*");
 
+        resp.addHeader("Content-Type", "application/json");
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/testdb", "root", "1234");
 
-            PreparedStatement pstm = connection.prepareStatement("insert into Customer values(?,?,?)");
+            PreparedStatement pstm = connection.prepareStatement("insert into customer values(?,?,?)");
             pstm.setObject(1, cusID);
             pstm.setObject(2, cusName);
             pstm.setObject(3, cusAddress);
-            resp.addHeader("Content-Type", "application/json");
 
             if (pstm.executeUpdate() > 0) {
                 JsonObjectBuilder response = Json.createObjectBuilder();
@@ -71,6 +69,7 @@ public class CustomerServlet extends HttpServlet {
 
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
+
         } catch (SQLException e) {
             JsonObjectBuilder response = Json.createObjectBuilder();
             response.add("state", "Error");
@@ -90,17 +89,18 @@ public class CustomerServlet extends HttpServlet {
         String cusName = jsonObject.getString("cusName");
         String cusAddress = jsonObject.getString("cusAddress");
 
-        resp.addHeader("Access-Control-Allow-Origin", "*");
+        System.out.println(cusID+" "+cusName+" "+cusAddress);
+
+        resp.addHeader("Content-Type", "application/json");
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/testdb", "root", "1234");
 
-            PreparedStatement pstm3 = connection.prepareStatement("update Customer set cusName=?,cusAddress=? where cusID=?");
+            PreparedStatement pstm3 = connection.prepareStatement("update customer set cusName=?,cusAddress=? where cusID=?");
             pstm3.setObject(3, cusID);
             pstm3.setObject(1, cusName);
             pstm3.setObject(2, cusAddress);
-            resp.addHeader("Content-Type", "application/json");
 
             if (pstm3.executeUpdate() > 0) {
                 JsonObjectBuilder response = Json.createObjectBuilder();
@@ -112,6 +112,7 @@ public class CustomerServlet extends HttpServlet {
 
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
+
         } catch (SQLException e) {
             JsonObjectBuilder response = Json.createObjectBuilder();
             response.add("state", "Error");
@@ -124,22 +125,19 @@ public class CustomerServlet extends HttpServlet {
 
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        JsonReader reader = Json.createReader(req.getReader());
-        JsonObject jsonObject = reader.readObject();
-
-        String cusID = jsonObject.getString("cusID");
-
-        resp.addHeader("Access-Control-Allow-Origin", "*");
+        String cusID = req.getParameter("cusID");
+        resp.addHeader("Content-type", "application/json");
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/testdb", "root", "1234");
 
-            PreparedStatement pstm2 = connection.prepareStatement("delete from Customer where cusID=?");
+            PreparedStatement pstm2 = connection.prepareStatement("delete from customer where cusID=?");
             pstm2.setObject(1, cusID);
-            resp.addHeader("Content-Type", "application/json");
 
             if (pstm2.executeUpdate() > 0) {
+                System.out.println("deleted "+cusID);
+
                 JsonObjectBuilder response = Json.createObjectBuilder();
                 response.add("state", "Ok");
                 response.add("message", "Customer Deleted..!");
@@ -152,6 +150,8 @@ public class CustomerServlet extends HttpServlet {
             throw new RuntimeException(e);
 
         } catch (SQLException e) {
+            System.out.println("not deleted "+cusID);
+
             JsonObjectBuilder response = Json.createObjectBuilder();
             response.add("state", "Error");
             response.add("message", e.getMessage());
@@ -159,13 +159,5 @@ public class CustomerServlet extends HttpServlet {
             resp.setStatus(400);
             resp.getWriter().print(response.build());
         }
-    }
-
-    @Override
-    protected void doOptions(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.addHeader("Access-Control-Allow-Origin", "*");
-        resp.addHeader("Access-Control-Allow-Methods", "PUT");
-        resp.addHeader("Access-Control-Allow-Methods", "DELETE");
-        resp.addHeader("Access-Control-Allow-Headers", "Content-type");
     }
 }

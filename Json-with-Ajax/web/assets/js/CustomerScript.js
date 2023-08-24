@@ -6,11 +6,11 @@ $("#btnGetAll").click(function () {
 
 function getAllCustomers() {
     $("#tblCustomer").empty();
-
+    <!--send ajax request to the customer servlet using jQuery-->
     $.ajax({
-        url: 'http://localhost:8080/Json_with_Ajax_Web_exploded/pages/customer',
+        url: 'customer',
         dataType: "json",
-        method: "GET",
+        method: "get",
         success: function (customers) {
             for (let i in customers) {
                 let cus = customers[i];
@@ -31,8 +31,8 @@ function getAllCustomers() {
 $("#btnCustomer").click(function () {
     let formData = $("#customerForm").serialize();
     $.ajax({
-        url: "http://localhost:8080/Json_with_Ajax_Web_exploded/pages/customer",
-        method: "POST",
+        url: "customer",
+        method: "post",
         data: formData,
         success: function (res) {
             console.log(res);
@@ -51,8 +51,10 @@ $("#btnCusDelete").click(function () {
     //   let formData=$("#customerForm").serialize();
     let id = $('#txtCustomerID').val();
 
+    console.log("delete clicked" + id);
+
     $.ajax({
-        url: 'http://localhost:8080/Json_with_Ajax_Web_exploded/pages/customer?id=' + id,
+        url: 'customer?cusID=' + id,
         method: 'DELETE',
 
         success: function (res) {
@@ -74,6 +76,7 @@ $("#btnUpdate").click(function () {
     let name = $('#txtCustomerName').val();
     let address = $('#txtCustomerAddress').val();
 
+
     let customer = {
         "cusID": id,
         "cusName": name,
@@ -81,7 +84,7 @@ $("#btnUpdate").click(function () {
     }
 
     $.ajax({
-        url: 'http://localhost:8080/Json_with_Ajax_Web_exploded/pages/customer',
+        url: 'customer',
         method: 'put',
         contentType: "application/json",
         data: JSON.stringify(customer),
