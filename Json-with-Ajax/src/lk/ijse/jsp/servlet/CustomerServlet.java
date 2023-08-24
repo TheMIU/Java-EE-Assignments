@@ -14,7 +14,7 @@ import java.sql.*;
 public class CustomerServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/testdb", "root", "1234");
@@ -37,9 +37,12 @@ public class CustomerServlet extends HttpServlet {
             resp.getWriter().print(allCustomers.build());
 
         } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
+            showMessage(resp, e.getMessage(), "error", "[]");
+            resp.setStatus(500);
+
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            showMessage(resp, e.getMessage(), "error", "[]");
+            resp.setStatus(400);
         }
     }
 
@@ -60,36 +63,31 @@ public class CustomerServlet extends HttpServlet {
             pstm.setObject(3, cusAddress);
 
             if (pstm.executeUpdate() > 0) {
-                JsonObjectBuilder response = Json.createObjectBuilder();
-                response.add("state", "Ok");
-                response.add("message", "Successfully Added.!");
-                response.add("data", "");
-                resp.getWriter().print(response.build());
+                showMessage(resp, cusID + " Successfully Added..!", "ok", "[]");
+                resp.setStatus(200);
+            }else {
+                showMessage(resp, "Wrong data", "error", "[]");
+                resp.setStatus(400);
             }
 
         } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
+            showMessage(resp, e.getMessage(), "error", "[]");
+            resp.setStatus(500);
 
         } catch (SQLException e) {
-            JsonObjectBuilder response = Json.createObjectBuilder();
-            response.add("state", "Error");
-            response.add("message", e.getMessage());
-            response.add("data", "");
+            showMessage(resp, e.getMessage(), "error", "[]");
             resp.setStatus(400);
-            resp.getWriter().print(response.build());
         }
     }
 
     @Override
-    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         JsonReader reader = Json.createReader(req.getReader());
         JsonObject jsonObject = reader.readObject();
 
         String cusID = jsonObject.getString("cusID");
         String cusName = jsonObject.getString("cusName");
         String cusAddress = jsonObject.getString("cusAddress");
-
-        System.out.println(cusID+" "+cusName+" "+cusAddress);
 
         resp.addHeader("Content-Type", "application/json");
 
@@ -103,23 +101,20 @@ public class CustomerServlet extends HttpServlet {
             pstm3.setObject(2, cusAddress);
 
             if (pstm3.executeUpdate() > 0) {
-                JsonObjectBuilder response = Json.createObjectBuilder();
-                response.add("state", "Ok");
-                response.add("message", "Customer Updated..!");
-                response.add("data", "");
-                resp.getWriter().print(response.build());
+                showMessage(resp, cusID + " Customer Updated..!", "ok", "[]");
+                resp.setStatus(200);
+            }else {
+                showMessage(resp, cusID + " Customer is not exist..!", "error", "[]");
+                resp.setStatus(400);
             }
 
         } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
+            showMessage(resp, e.getMessage(), "error", "[]");
+            resp.setStatus(500);
 
         } catch (SQLException e) {
-            JsonObjectBuilder response = Json.createObjectBuilder();
-            response.add("state", "Error");
-            response.add("message", e.getMessage());
-            response.add("data", "");
+            showMessage(resp, e.getMessage(), "error", "[]");
             resp.setStatus(400);
-            resp.getWriter().print(response.build());
         }
     }
 
@@ -132,32 +127,34 @@ public class CustomerServlet extends HttpServlet {
             Class.forName("com.mysql.jdbc.Driver");
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/testdb", "root", "1234");
 
-            PreparedStatement pstm2 = connection.prepareStatement("delete from customer where cusID=?");
-            pstm2.setObject(1, cusID);
+            PreparedStatement pstm = connection.prepareStatement("delete from customer where cusID=?");
+            pstm.setObject(1, cusID);
 
-            if (pstm2.executeUpdate() > 0) {
-                System.out.println("deleted "+cusID);
-
-                JsonObjectBuilder response = Json.createObjectBuilder();
-                response.add("state", "Ok");
-                response.add("message", "Customer Deleted..!");
-                response.add("data", "");
-                resp.getWriter().print(response.build());
+            if (pstm.executeUpdate() > 0) {
+                showMessage(resp, cusID + " Customer Deleted..!", "ok", "[]");
+                resp.setStatus(200);
+            } else {
+                showMessage(resp, "Customer with ID " + cusID + " not found.", "error", "[]");
+                resp.setStatus(400);
             }
 
-
         } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
+            showMessage(resp, e.getMessage(), "error", "[]");
+            resp.setStatus(500);
 
         } catch (SQLException e) {
-            System.out.println("not deleted "+cusID);
-
-            JsonObjectBuilder response = Json.createObjectBuilder();
-            response.add("state", "Error");
-            response.add("message", e.getMessage());
-            response.add("data", "");
+            showMessage(resp, e.getMessage(), "error", "[]");
             resp.setStatus(400);
-            resp.getWriter().print(response.build());
         }
     }
+
+    private void showMessage(HttpServletResponse resp, String message, String state, String data) throws IOException {
+        JsonObjectBuilder response = Json.createObjectBuilder();
+        response.add("state", state);
+        response.add("message", message);
+        response.add("data", data);
+        resp.getWriter().print(response.build());
+    }
 }
+
+

@@ -7,59 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a5a995b7-dbf3-4701-8781-dbe4702aa7e1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java-EE-Assignments.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Json_with_Ajax_Web_exploded.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/json_p.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/json_p.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_j_8_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_j_8_1_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/assets/css/bootstrap-grid.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/assets/css/bootstrap-grid.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/assets/css/bootstrap-grid.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/assets/css/bootstrap-grid.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/assets/css/bootstrap-reboot.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/assets/css/bootstrap-reboot.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/assets/css/bootstrap-reboot.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/assets/css/bootstrap-reboot.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/assets/css/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/assets/css/bootstrap.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/assets/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/assets/css/bootstrap.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/assets/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/assets/css/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/assets/js/CustomerScript.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/assets/js/ItemScript.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/assets/js/bootstrap.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/assets/js/bootstrap.bundle.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/assets/js/bootstrap.bundle.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/assets/js/bootstrap.bundle.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/assets/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/assets/js/bootstrap.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/assets/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/assets/js/bootstrap.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/assets/js/jquery-3.6.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/assets/js/jquery-3.7.0.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/pages/customer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/pages/item.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/pages/purchase-order.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Json-with-Ajax/Json-with-Ajax.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Json-with-Ajax/Json-with-Ajax.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Json-with-Ajax/src/lk/ijse/jsp/dto/CustomerDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Json-with-Ajax/src/lk/ijse/jsp/dto/CustomerDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Json-with-Ajax/src/lk/ijse/jsp/dto/ItemDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Json-with-Ajax/src/lk/ijse/jsp/dto/ItemDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Json-with-Ajax/src/lk/ijse/jsp/servlet/CustomerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/Json-with-Ajax/src/lk/ijse/jsp/servlet/CustomerServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Json-with-Ajax/src/lk/ijse/jsp/servlet/ItemServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/Json-with-Ajax/src/lk/ijse/jsp/servlet/ItemServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Json_with_Ajax_Web_exploded/Json-with-Ajax_Web exploded.war" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Json_with_Ajax_Web_exploded2/WEB-INF/lib/javax.json-1.1.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Json_with_Ajax_Web_exploded2/WEB-INF/lib/javax.json-api-1.1.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Json_with_Ajax_Web_exploded2/WEB-INF/lib/mysql-connector-j-8.1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Json-with-Ajax/web/assets/js/CustomerScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/Json-with-Ajax/web/assets/js/CustomerScript.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Json-with-Ajax/web/pages/customer.html" beforeDir="false" afterPath="$PROJECT_DIR$/Json-with-Ajax/web/pages/customer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/PosAppNew/PosAppNew.war" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/PosAppNew/PosAppNew.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Json-with-Ajax/lk/ijse/jsp/servlet/CustomerServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Json-with-Ajax/lk/ijse/jsp/servlet/CustomerServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Json-with-Ajax/lk/ijse/jsp/servlet/ItemServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Json-with-Ajax/lk/ijse/jsp/servlet/ItemServlet.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -296,7 +249,7 @@
       <workItem from="1692867398806" duration="1981000" />
       <workItem from="1692869545154" duration="574000" />
       <workItem from="1692870175332" duration="488000" />
-      <workItem from="1692870895882" duration="3680000" />
+      <workItem from="1692870895882" duration="8758000" />
     </task>
     <servers />
   </component>

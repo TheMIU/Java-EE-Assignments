@@ -6,11 +6,11 @@ $("#btnGetAll").click(function () {
 
 function getAllCustomers() {
     $("#tblCustomer").empty();
-    <!--send ajax request to the customer servlet using jQuery-->
+
     $.ajax({
         url: 'customer',
         dataType: "json",
-        method: "get",
+        method: "GET",
         success: function (customers) {
             for (let i in customers) {
                 let cus = customers[i];
@@ -22,60 +22,52 @@ function getAllCustomers() {
             }
         },
         error: function (error) {
-            console.log(error + " error");
             alert(error.responseJSON.message);
         }
     });
 }
 
+// add
 $("#btnCustomer").click(function () {
     let formData = $("#customerForm").serialize();
+
     $.ajax({
         url: "customer",
-        method: "post",
+        method: "POST",
         data: formData,
         success: function (res) {
-            console.log(res);
             alert(res.message);
             getAllCustomers();
         },
         error: function (error) {
-            console.log(error.responseJSON);
             alert(error.responseJSON.message);
         }
     });
-
 });
 
+// delete
 $("#btnCusDelete").click(function () {
-    //   let formData=$("#customerForm").serialize();
     let id = $('#txtCustomerID').val();
-
-    console.log("delete clicked" + id);
 
     $.ajax({
         url: 'customer?cusID=' + id,
         method: 'DELETE',
 
         success: function (res) {
-            console.log(res);
             alert(res.message);
             getAllCustomers();
         },
         error: function (error) {
-            console.log(error.responseJSON);
             alert(error.responseJSON.message);
         }
     });
 });
 
+// update
 $("#btnUpdate").click(function () {
-    //  let formData=$("#customerForm").serialize();
-
     let id = $('#txtCustomerID').val();
     let name = $('#txtCustomerName').val();
     let address = $('#txtCustomerAddress').val();
-
 
     let customer = {
         "cusID": id,
@@ -85,17 +77,15 @@ $("#btnUpdate").click(function () {
 
     $.ajax({
         url: 'customer',
-        method: 'put',
+        method: 'PUT',
         contentType: "application/json",
         data: JSON.stringify(customer),
 
         success: function (res) {
-            console.log(res);
             alert(res.message);
             getAllCustomers();
         },
         error: function (error) {
-            console.log(error.responseJSON);
             alert(error.responseJSON.message);
         }
     });
