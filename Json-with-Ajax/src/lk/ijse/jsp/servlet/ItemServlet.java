@@ -1,8 +1,8 @@
 package lk.ijse.jsp.servlet;
 
-import javax.json.Json;
-import javax.json.JsonArrayBuilder;
-import javax.json.JsonObjectBuilder;
+import lk.ijse.jsp.servlet.util.DBConnection;
+
+import javax.json.*;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,8 +17,7 @@ public class ItemServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/testdb", "root", "1234");
+            Connection connection = DBConnection.getDBConnection().getConnection();
             PreparedStatement pstm = connection.prepareStatement("select * from Item");
             ResultSet rst = pstm.executeQuery();
 
@@ -40,82 +39,121 @@ public class ItemServlet extends HttpServlet {
             resp.getWriter().print(allItems.build());
 
         } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
+            showMessage(resp, e.getMessage(), "error", "[]");
+            resp.setStatus(500);
+
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            showMessage(resp, e.getMessage(), "error", "[]");
+            resp.setStatus(400);
         }
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         String code = req.getParameter("code");
         String itemName = req.getParameter("description");
         String qty = req.getParameter("qty");
         String unitPrice = req.getParameter("unitPrice");
-        String option = req.getParameter("option");
 
+        resp.addHeader("Content-Type", "application/json");
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/testdb", "root", "1234");
-            switch (option) {
-                case "add":
-                    PreparedStatement pstm = connection.prepareStatement("insert into Item values(?,?,?,?)");
-                    pstm.setObject(1, code);
-                    pstm.setObject(2, itemName);
-                    pstm.setObject(3, qty);
-                    pstm.setObject(4, unitPrice);
-                    resp.addHeader("Content-Type", "application/json");
+            Connection connection = DBConnection.getDBConnection().getConnection();
+            PreparedStatement pstm = connection.prepareStatement("insert into Item values(?,?,?,?)");
 
-                    if (pstm.executeUpdate() > 0) {
-                        JsonObjectBuilder response = Json.createObjectBuilder();
-                        response.add("state", "Ok");
-                        response.add("message", "Successfully Added.!");
-                        response.add("data", "");
-                        resp.getWriter().print(response.build());
-                    }
-                    break;
+            pstm.setObject(1, code);
+            pstm.setObject(2, itemName);
+            pstm.setObject(3, qty);
+            pstm.setObject(4, unitPrice);
 
-                case "delete":
-                    PreparedStatement pstm2 = connection.prepareStatement("delete from Item where code=?");
-                    pstm2.setObject(1, code);
-                    resp.addHeader("Content-Type", "application/json");
+            if (pstm.executeUpdate() > 0) {
+                showMessage(resp, code + " Successfully Added..!", "ok", "[]");
+                resp.setStatus(200);
+            } else {
+                showMessage(resp, "Wrong data", "error", "[]");
+                resp.setStatus(400);
+            }
 
-                    if (pstm2.executeUpdate() > 0) {
-                        JsonObjectBuilder response = Json.createObjectBuilder();
-                        response.add("state", "Ok");
-                        response.add("message", "Item Deleted..!");
-                        response.add("data", "");
-                        resp.getWriter().print(response.build());
-                    }
-                    break;
+        } catch (ClassNotFoundException e) {
+            showMessage(resp, e.getMessage(), "error", "[]");
+            resp.setStatus(500);
 
-                case "update":
-                    PreparedStatement pstm3 = connection.prepareStatement("update Item set itemName=?,qty=?,unitPrice=? where code=?");
-                    pstm3.setObject(1, itemName);
-                    pstm3.setObject(2, qty);
-                    pstm3.setObject(3, unitPrice);
-                    pstm3.setObject(4, code);
-                    resp.addHeader("Content-Type", "application/json");
+        } catch (SQLException e) {
+            showMessage(resp, e.getMessage(), "error", "[]");
+            resp.setStatus(400);
+        }
+    }
 
-                    if (pstm3.executeUpdate() > 0) {
-                        JsonObjectBuilder response = Json.createObjectBuilder();
-                        response.add("state", "Ok");
-                        response.add("message", "Item Updated..!");
-                        response.add("data", "");
-                        resp.getWriter().print(response.build());
-                    }
-                    break;
+    @Override
+    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        JsonReader reader = Json.createReader(req.getReader());
+        JsonObject jsonObject = reader.readObject();
+
+        String code = jsonObject.getString("code");
+        String itemName = jsonObject.getString("itemName");
+        String qty = jsonObject.getString("qty");
+        String unitPrice = jsonObject.getString("unitPrice");
+
+        resp.addHeader("Content-Type", "application/json");
+        try {
+            Connection connection = DBConnection.getDBConnection().getConnection();
+            PreparedStatement pstm3 = connection.prepareStatement("update Item set itemName=?,qty=?,unitPrice=? where code=?");
+
+            pstm3.setObject(1, itemName);
+            pstm3.setObject(2, qty);
+            pstm3.setObject(3, unitPrice);
+            pstm3.setObject(4, code);
+
+            if (pstm3.executeUpdate() > 0) {
+                showMessage(resp, code + " Item Updated..!", "ok", "[]");
+                resp.setStatus(200);
+            } else {
+                showMessage(resp, code + " Item is not exist..!", "error", "[]");
+                resp.setStatus(400);
+            }
+
+        } catch (ClassNotFoundException e) {
+            showMessage(resp, e.getMessage(), "error", "[]");
+            resp.setStatus(500);
+
+        } catch (SQLException e) {
+            showMessage(resp, e.getMessage(), "error", "[]");
+            resp.setStatus(400);
+        }
+    }
+
+    @Override
+    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String code = req.getParameter("code");
+        resp.addHeader("Content-type", "application/json");
+
+        try{
+            Connection connection = DBConnection.getDBConnection().getConnection();
+            PreparedStatement pstm = connection.prepareStatement("delete from Item where code=?");
+            pstm.setObject(1, code);
+            resp.addHeader("Content-Type", "application/json");
+
+            if (pstm.executeUpdate() > 0) {
+                showMessage(resp, code + " Item Deleted..!", "ok", "[]");
+                resp.setStatus(200);
+            } else {
+                showMessage(resp, "Item with code " + code + " not found.", "error", "[]");
+                resp.setStatus(400);
             }
         } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
+            showMessage(resp, e.getMessage(), "error", "[]");
+            resp.setStatus(500);
+
         } catch (SQLException e) {
-            JsonObjectBuilder response = Json.createObjectBuilder();
-            response.add("state", "Error");
-            response.add("message", e.getMessage());
-            response.add("data", "");
+            showMessage(resp, e.getMessage(), "error", "[]");
             resp.setStatus(400);
-            resp.getWriter().print(response.build());
         }
+    }
+
+    private void showMessage(HttpServletResponse resp, String message, String state, String data) throws IOException {
+        JsonObjectBuilder response = Json.createObjectBuilder();
+        response.add("state", state);
+        response.add("message", message);
+        response.add("data", data);
+        resp.getWriter().print(response.build());
     }
 }

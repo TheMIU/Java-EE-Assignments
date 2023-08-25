@@ -2,16 +2,39 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="PosAppNew" />
+      <artifact name="PosApp2" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a5a995b7-dbf3-4701-8781-dbe4702aa7e1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Json-with-Ajax/src/lk/ijse/jsp/servlet/util/DBConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/PosAppNew.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/PosApp2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Json-with-Ajax/src/lk/ijse/jsp/servlet/CustomerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/Json-with-Ajax/src/lk/ijse/jsp/servlet/CustomerServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/PosAppNew/PosAppNew.war" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/PosAppNew/PosAppNew.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Json-with-Ajax/src/lk/ijse/jsp/servlet/ItemServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/Json-with-Ajax/src/lk/ijse/jsp/servlet/ItemServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Json-with-Ajax/web/assets/js/ItemScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/Json-with-Ajax/web/assets/js/ItemScript.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Json-with-Ajax/web/assets/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/Json-with-Ajax/web/assets/js/frameworks/bootstrap.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Json-with-Ajax/web/assets/js/bootstrap.bundle.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/Json-with-Ajax/web/assets/js/frameworks/bootstrap.bundle.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Json-with-Ajax/web/assets/js/bootstrap.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/Json-with-Ajax/web/assets/js/frameworks/bootstrap.bundle.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Json-with-Ajax/web/assets/js/bootstrap.bundle.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/Json-with-Ajax/web/assets/js/frameworks/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Json-with-Ajax/web/assets/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/Json-with-Ajax/web/assets/js/frameworks/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Json-with-Ajax/web/assets/js/bootstrap.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/Json-with-Ajax/web/assets/js/frameworks/bootstrap.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Json-with-Ajax/web/assets/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/Json-with-Ajax/web/assets/js/frameworks/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Json-with-Ajax/web/assets/js/bootstrap.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/Json-with-Ajax/web/assets/js/frameworks/bootstrap.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Json-with-Ajax/web/assets/js/jquery-3.6.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/Json-with-Ajax/web/assets/js/frameworks/jquery-3.6.1.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Json-with-Ajax/web/assets/js/jquery-3.7.0.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/Json-with-Ajax/web/assets/js/frameworks/jquery-3.7.0.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Json-with-Ajax/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Json-with-Ajax/web/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Json-with-Ajax/web/pages/customer.html" beforeDir="false" afterPath="$PROJECT_DIR$/Json-with-Ajax/web/pages/customer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Json-with-Ajax/web/pages/item.html" beforeDir="false" afterPath="$PROJECT_DIR$/Json-with-Ajax/web/pages/item.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Json-with-Ajax/web/pages/purchase-order.html" beforeDir="false" afterPath="$PROJECT_DIR$/Json-with-Ajax/web/pages/purchase-order.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/PosApp/PosApp.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/PosAppNew/PosAppNew.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/pos_app/pos_app.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-EE-Assignments/lk/ijse/jsp/dto/CustomerDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-EE-Assignments/lk/ijse/jsp/dto/ItemDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-EE-Assignments/lk/ijse/jsp/servlet/CustomerServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-EE-Assignments/lk/ijse/jsp/servlet/ItemServlet.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Json-with-Ajax/lk/ijse/jsp/servlet/CustomerServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Json-with-Ajax/lk/ijse/jsp/servlet/CustomerServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Json-with-Ajax/lk/ijse/jsp/servlet/ItemServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Json-with-Ajax/lk/ijse/jsp/servlet/ItemServlet.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,12 +74,13 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Json-with-Ajax" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15136719" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\GitHub MY\Java-EE-Assignments\Json-with-Ajax\web\assets\js\frameworks" />
       <recent name="F:\GitHub MY\Java-EE-Assignments\Json-with-Ajax\web" />
     </key>
   </component>
@@ -75,12 +99,12 @@
       </method>
     </configuration>
     <configuration name="Tomcat 8.5.90" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.90" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/PosApp/" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/PosApp2/" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="PosAppNew">
+        <artifact name="PosApp2">
           <settings>
-            <option name="CONTEXT_PATH" value="/PosApp" />
+            <option name="CONTEXT_PATH" value="/PosApp2" />
           </settings>
         </artifact>
       </deployment>
@@ -158,7 +182,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="PosAppNew" />
+          <artifact name="PosApp2" />
         </option>
       </method>
     </configuration>
@@ -255,7 +279,9 @@
       <workItem from="1692867398806" duration="1981000" />
       <workItem from="1692869545154" duration="574000" />
       <workItem from="1692870175332" duration="488000" />
-      <workItem from="1692870895882" duration="9407000" />
+      <workItem from="1692870895882" duration="10351000" />
+      <workItem from="1692924509864" duration="4139000" />
+      <workItem from="1692930868711" duration="1801000" />
     </task>
     <servers />
   </component>
